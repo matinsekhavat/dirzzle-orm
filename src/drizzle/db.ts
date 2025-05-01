@@ -15,11 +15,11 @@
 import { drizzle } from "drizzle-orm/node-postgres";
 import { Pool } from "pg";
 
-import * as schema from "@/db/schema";
-import env from "@/lib/env";
+import * as schema from "@/drizzle/schema";
+import { env } from "@/data/env/index";
 
 const pool = new Pool({
-	connectionString: env.DATABASE_URL,
+  connectionString: env.DATABASE_URL,
 });
 
 // TODO: logger true
