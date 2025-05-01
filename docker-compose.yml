@@ -2,12 +2,13 @@ services:
   db:
     container_name: db
     image: postgres:16
+    restart: always
     environment:
-      - POSTGRES_USER=${DB_USER}
-      - POSTGRES_PASSWORD=${DB_PASSWORD}
-      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=drizzle-test
     ports:
-      - ${DB_PORT}:5432
+      - 5432:5432
     volumes:
       - db-data:/var/lib/postgresql/data
 
