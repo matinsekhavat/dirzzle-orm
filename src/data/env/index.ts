@@ -9,6 +9,7 @@ const envSchema = z.object({
   DB_NAME: z.string().min(1).nonempty(),
   DB_USER: z.string().min(1).nonempty(),
   DB_HOST: z.string().min(1).nonempty(),
+  DATABASE_URL: z.string().url(),
 });
 
 export const env = envSchema.parse(process.env);
